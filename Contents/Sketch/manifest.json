@@ -1,0 +1,20 @@
+{
+    "name" : "Jsonfy",
+    "identifier" : "hero99.com.br.jsonfy",
+    "version" : "1.0.2",
+    "description" : "Export your project as JSON",
+    "authorEmail" : "andreccomputacao@gmail.com",
+    "author" : "André Furquim",
+    "commands" : [
+    {
+      "script" : "jsonfy.js",
+      "handlers" : {
+        "actions": {
+          "DocumentSaved": "generateJSON"
+        }
+      },
+      "name" : "Jsonfy",
+      "identifier" : "jsonfy"
+    }
+  ]
+}
