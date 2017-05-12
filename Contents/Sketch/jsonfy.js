@@ -2,22 +2,53 @@
 //
 // This plugin exports  your project as JSON
 
-function generateJSON(context) {
-  context = context.actionContext;
-  var documentPath = context.document.fileURL() + ""
-  documentPath = documentPath.replace(/file:[\/]{2}/i, '')
-  var jsonFile = context.document.displayName() + ".json"
-  var sketchFileName = context.document.displayName()+".sketch"
-  var regex = new RegExp(sketchFileName)
-  var destinationPath = documentPath.replace(regex, '')
-  var command = "/usr/local/bin/sketchtool dump " + documentPath  + " > " + destinationPath + "" + jsonFile
+function generateJson(context){
+  var context = context.actionContext
 
-  var args = ["-l", "-c", command]
+  var documentPath = getDocumentPath(context)
+  var jsonFileName = getJsonFileName(context)
+  var sketchFileName = getSketchFileName(context)
+  var destinationPath = getDestination(context)
 
+  generateJsonFile(documentPath, destinationPath, jsonFileName)
+}
+
+// TODO: Put all the methods below in a utilitary file
+
+function generateJsonFile(documentPath, destinationPath, jsonFileName){
+  var command = "/usr/local/bin/sketchtool dump " + documentPath  + " > " + destinationPath + "" + jsonFileName
+  log("Executing command: " + command)
+  var args = ["-l", "-c", command]  
   runCommand("/bin/bash", args)
-};
 
-function runCommand(command, args) {
+}
+
+function getDestination(context){
+  var documentPath = getDocumentPath(context)
+  var sketchFileName = getSketchFileName(context)
+  var regex = new RegExp(sketchFileName)
+  return documentPath.replace(regex, '')
+}
+
+function getSketchFileName(context){
+  return getFileNameInFormat(context, "sketch")
+}
+
+function getJsonFileName(context){
+  return getFileNameInFormat(context, "json")
+}
+
+function getFileNameInFormat(context, format) {
+  return context.document.displayName() + "." + format
+}
+
+function getDocumentPath(context){
+  var path = context.document.fileURL()
+  var documentPath = path + ""
+  return documentPath.replace(/file:[\/]{2}/i, '')
+}
+
+function runCommand(command, args){
   var task = NSTask.alloc().init();
   task.launchPath = command;
   task.arguments = args;

@@ -10,7 +10,7 @@
       "script" : "jsonfy.js",
       "handlers" : {
         "actions": {
-          "DocumentSaved": "generateJSON"
+          "DocumentSaved": "generateJson"
         }
       },
       "name" : "Jsonfy",
