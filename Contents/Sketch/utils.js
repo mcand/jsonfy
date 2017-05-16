@@ -1,5 +1,4 @@
 function generateJsonFile(documentPath, destinationPath, jsonFileName){
-  // We need to store this file in a file variable for us to read
   var destinationFilePath = destinationPath + '' + jsonFileName
   var command = '/usr/local/bin/sketchtool dump ' + documentPath  + ' > ' + destinationFilePath
   log('Executing command: ' + command)
@@ -10,12 +9,17 @@ function generateJsonFile(documentPath, destinationPath, jsonFileName){
 
 function readSketchGenaratedJson(jsonFile){
   var jsonFromSketch = loadData(jsonFile)
-  //var b = loadData("/Users/hero99/Desktop/pocbutton.json")
   return jsonFromSketch
 }
 
 function getDocumentContext(context){
   return context.document
+}
+
+function deleteFileFromSystem(filePath){
+  var command = 'rm ' + filePath
+  var args = ['-l', '-c', command]
+  runCommand('/bin/bash', args)
 }
 
 function getDestination(context){

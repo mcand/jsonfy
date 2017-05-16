@@ -1,0 +1,57 @@
+
+/* Suporte e validação das tags + atributos */
+
+{
+  "tags": {
+    "a": {
+      "attributes": {
+        "attribute1": {
+          "background-color": "/^{0-9a-f}{2,6}$/"
+        }
+      }
+    },
+    "h1": {
+      "attributes": {
+        "attribute1": {
+          "validation": "regex"
+        }
+      }
+    }
+  }
+}
+
+
+/* JSON Gerado Pelo Plugin do Sketch */
+{
+	"root": {
+		"a": {
+			"cssAttributes": {
+				"font-size": "12px",
+				"color": "#fff",
+				"padding": "12px 12px 12px"
+			},
+			"attributes": {
+				"id": [],
+				"classes": ["btn", "btn-success"],
+				"style": "margin-right: 0",
+				"href": "www.philips.com"
+			},
+			"children": {
+				"span": {
+					"attributes": {
+						"id": [],
+						"classes": ["clock"]
+					}
+				}
+			}
+		},
+		"div": {
+			"cssAttributes": {
+				"font-size": "40px",
+				"color": "#ff0000",
+				"padding": "10px 10px 10px 10px",
+				"classes": ["classe1", "classe2"]
+			}
+		}
+	}
+}
