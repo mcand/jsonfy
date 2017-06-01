@@ -1,9 +1,14 @@
 function generateJsonFile(documentPath, destinationPath, jsonFileName){
   var destinationFilePath = destinationPath + '' + jsonFileName
   var command = '/usr/local/bin/sketchtool dump ' + documentPath  + ' > ' + destinationFilePath
-  log('Executing command: ' + command)
+
+  log("destinationPath is " + destinationPath)
+  log("jsonFileName is " + jsonFileName)
+
+  log('Executing command: ' + command)  
   var args = ['-l', '-c', command]
   runCommand('/bin/bash', args)
+
   return destinationFilePath
 }
 
@@ -25,16 +30,21 @@ function deleteFileFromSystem(filePath){
 function getDestination(context){
   var documentPath = getDocumentPath(context)
   var sketchFileName = getSketchFileName(context)
+  log("sketchFileName" + sketchFileName)
+  log("documentPath" + documentPath)
   var regex = new RegExp(sketchFileName)
   return documentPath.replace(regex, '')
 }
 
 function getSketchFileName(context){
-  return getFileNameInFormat(context, 'sketch')
+  documentContext = getDocumentContext(context)
+  return documentContext.displayName()
 }
 
 function getJsonFileName(context){
-  return getFileNameInFormat(context, 'json')
+  var name =  getFileNameInFormat(context, 'json')
+  name = name.replace('.sketch', '')
+  return name
 }
 
 function getFileNameInFormat(context, format) {
