@@ -5,7 +5,7 @@ function generateJsonFile(documentPath, destinationPath, jsonFileName){
   log("destinationPath is " + destinationPath)
   log("jsonFileName is " + jsonFileName)
 
-  log('Executing command: ' + command)  
+  log('Executing command: ' + command)
   var args = ['-l', '-c', command]
   runCommand('/bin/bash', args)
 

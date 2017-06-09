@@ -1,20 +1,23 @@
 {
-    "name" : "Jsonfy",
-    "identifier" : "andreccomputacao.com.br.jsonfy",
+    "name" : "Nestor",
+    "identifier" : "andreccomputacao.com.br.nestor",
     "version" : "1.0.2",
     "description" : "Export your project as JSON",
     "authorEmail" : "andreccomputacao@gmail.com",
     "author" : "André Furquim",
+    "name" : "Nestor",
+    "identifier" : "nestor",
     "commands" : [
-    {
-      "script" : "jsonfy.js",
-      "handlers" : {
-        "actions": {
-          "DocumentSaved": "generateJson"
-        }
-      },
-      "name" : "Jsonfy",
-      "identifier" : "jsonfy"
+      {
+        "name": "Generate HTML",
+        "identifier": "nestorize",
+        "script": "jsonfy.js",
+        "handler": "generateJson"
+      }
+    ],
+    "menu": {
+      "items": [
+        "nestorize"
+      ]
     }
-  ]
 }
