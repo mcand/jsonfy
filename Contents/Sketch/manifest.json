@@ -1,18 +1,18 @@
 {
-    "name" : "Nestor",
+    "name" : "🌌 _ness",
     "identifier" : "andreccomputacao.com.br.nestor",
     "version" : "1.0.2",
     "description" : "Export your project as JSON",
     "authorEmail" : "andreccomputacao@gmail.com",
     "author" : "André Furquim",
-    "name" : "Nestor",
-    "identifier" : "nestor",
+    "identifier" : "_ness",
     "commands" : [
       {
         "name": "Generate HTML",
         "identifier": "nestorize",
         "script": "jsonfy.js",
-        "handler": "generateJson"
+        "handler": "generateJson",
+        "icon": "Resource/Icons/delivery.png"
       }
     ],
     "menu": {
