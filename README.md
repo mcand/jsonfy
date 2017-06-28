@@ -8,6 +8,9 @@ file containing the markups and the CSS of the art designed on Sketch.
 ## Instalation
 Download the plugin and double click to install it.
 
+## Configuration
+To start generating HTML file, you need to configure _ness Listener. See instructions on how to do that [here](https://github.com/nagueva/htmlfy))
+
 ## HTML Generation
 On the tab plugins, go to _ness and click Generate HTML. An HTML page should go to your Desktop with the named export.html
 
