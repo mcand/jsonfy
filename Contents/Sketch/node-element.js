@@ -16,14 +16,17 @@ function NodeElement(nodeName, parentObject, layers, objectID){
     }
 
     function setClassesFromNodeName(nodeName){
+        log("nodename")
+        log(nodeName)
         var pattern = /(\.[\w\d\-_@=‘“]+)/gi
         var classes = []
         var c = nodeName.match(pattern)
-        for(i=0; i < c.length; c++){
+        for(var i=0; i < c.length; c++){
             var h = c.shift()
             h = h.replace('.', '')
             classes.push(h)
         }
+        log(classes);
         return classes
     }
 	return new NodeElement(nodeName, parentObject, layers, objectID)

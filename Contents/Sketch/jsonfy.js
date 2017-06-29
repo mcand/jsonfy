@@ -27,7 +27,7 @@ function generateJson(context){
   var output = nestorParser.getNestorJson()
   output = JSON.stringify(output);
   // generate a file with the new json
-  log(output)
+  // log(output)
   var someString = [NSString stringWithFormat:"%@", output],
   filePath = "/Users/"+ NSUserName() +"/Desktop/export.json";
   [someString writeToFile:filePath atomically:true

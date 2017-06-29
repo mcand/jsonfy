@@ -51,7 +51,7 @@ function NestorParser(sketchFile){
   }
 
   NestorParser.prototype.getSketchJson = function(){
-    log(this.sketchJson)
+    // log(this.sketchJson)
   }
 
   NestorParser.prototype.getNestorJson = function(){
@@ -76,15 +76,15 @@ function NestorParser(sketchFile){
   }
 
   var getSymbolLayers = function(){
-    log("Olha o sketchjson")
-    log(this.sketchJson["pages"][1]["layers"])
-    log("fim do olha")
+    // log("Olha o sketchjson")
+    // log(this.sketchJson["pages"][1]["layers"])
+    // log("fim do olha")
     return this.sketchJson["pages"][1]["layers"]
   }
 
   // example of how we would implment static method
   NestorParser.staticMethod = function(){
-    log("This is a static method.")
+    // log("This is a static method.")
   }
 
   return new NestorParser(sketchFile)
