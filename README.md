@@ -18,17 +18,17 @@ On the tab plugins, go to _ness and click Generate HTML. An HTML page should go 
 In order to generate an HTML page properly, the designer must follow some rules defined below:
 
 ### Symbol Creation
-It's important that every component should be a symbol on Sketch.
+It's important that every component should be grouped with a folder on Sketch.
 
 #### Examples:
 
-a. If you want to create a button, you should give your symbol a name starting with a (denotating the anchor tag in HTML5).
+a. If you want to create a button, you should group a name starting with a (denotating the anchor tag in HTML5).
 
-b. If you want to create a header, you should give your symbol a name starting with header (denoting the header tag in HTML5).
+b. If you want to create a header,  you should group a name starting with header (denoting the header tag in HTML5).
 
 ### Adding Classes to a symbol 
 
-If you want to add a class to your tag, just name (or rename) your symbol with the class name preceded by a dot ".".
+If you want to add a class to your tag, just name (or rename) your group name with the class name preceded by a dot ".".
 
 #### Example:
 
